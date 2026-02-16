@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Annexe — Logigramme</title>
+  <style>
+    body { font-family: Arial,Helvetica,sans-serif; margin: 2rem; line-height:1.4; background-color: #f7fafc; }
+    header nav a { margin-right: 1rem; color: #0366d6; text-decoration: none; }
+    .flowchart { margin-top: 2rem; display:flex; justify-content:center; }
+    svg { max-width:100%; height:auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Annexe — Logigramme</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="annexe-autres.html">Annexe autres</a>
+      <a href="activites.html">Activités</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>Exemple simple de logigramme (flux de processus).</p>
+    <div class="flowchart" role="img" aria-label="Logigramme simple">
+      <svg width="600" height="180" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+          </marker>
+        </defs>
+        <rect x="20" y="30" rx="8" ry="8" width="140" height="50" fill="#e6f2ff" stroke="#0366d6"/>
+        <text x="90" y="60" font-size="14" text-anchor="middle" fill="#03396c">Démarrer</text>
+
+        <rect x="230" y="20" rx="8" ry="8" width="180" height="70" fill="#fff8dc" stroke="#d6a200"/>
+        <text x="320" y="52" font-size="14" text-anchor="middle" fill="#7a4b00">Étape 1 : Vérifier</text>
+
+        <rect x="460" y="30" rx="8" ry="8" width="120" height="50" fill="#e6ffe6" stroke="#2e8b57"/>
+        <text x="520" y="60" font-size="14" text-anchor="middle" fill="#055a2b">Terminer</text>
+
+        <line x1="160" y1="55" x2="230" y2="55" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="410" y1="55" x2="460" y2="55" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      </svg>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Retour à l'accueil</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annexe - MDT</title>
+    <style>
+        body{font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;background:linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%);color:#e0f2f1;padding:30px}
+        .card{max-width:1000px;margin:0 auto;background:rgba(0,0,0,0.25);padding:24px;border-radius:8px}
+        h1{color:#80deea}
+        a.back{display:inline-block;margin-top:18px;padding:10px 14px;background:#26c6da;color:#012;text-decoration:none;border-radius:6px}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>MDT - Images et déploiement</h1>
+        <p>Informations sur l'image MDT à préparer pour les classes mobiles : partitionnement, applications préinstallées, scripts post-installation, pilotes réseau et imprimantes.</p>
+
+        <h2>Checklist</h2>
+        <ul>
+            <li>Créer image de référence W11</li>
+            <li>Intégrer pilotes et mises à jour.</li>
+            <li>Configurer les tâches de séquence MDT.</li>
+            <li>Tester sur une machine de pré-prod.</li>
+        </ul>
+
+        <h2>Emplacement document</h2>
+        <div id="doc-area" style="margin-bottom:16px;">
+            <p style="margin:0 0 8px 0;color:#b2dfdb;">Choisissez un fichier PDF ou image pour aperçu local (le fichier reste local, non envoyé). Vous pouvez aussi glisser-déposer ici.</p>
+            <div id="drop" style="padding:12px;border:2px dashed rgba(128,222,234,0.25);border-radius:6px;background:rgba(0,0,0,0.08);">
+                <input id="fileInput" type="file" accept=".pdf,image/*" style="display:inline-block;" />
+                <button id="clearBtn" style="margin-left:8px;padding:6px 10px;border-radius:6px;background:#26c6da;border:none;color:#012;cursor:pointer;">Effacer</button>
+                <div id="preview" style="margin-top:12px;"></div>
+                <p id="downloadLink" style="margin-top:8px;font-size:0.9em;"></p>
+            </div>
+        </div>
+
+        <a class="back" href="index.html">Retour</a>
+    </div>
+</body>
+</html>

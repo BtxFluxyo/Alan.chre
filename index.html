@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #e0f2f1;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 32, 39, 0.95);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #26c6da;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #80deea;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #b2dfdb;
+        }
+
+        /* Sommaire */
+        .sommaire {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sommaire-item {
+            background: rgba(38, 198, 218, 0.1);
+            border: 2px solid #26c6da;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sommaire-item:hover {
+            transform: translateY(-5px);
+            background: rgba(38, 198, 218, 0.2);
+        }
+
+        .sommaire-item h3 {
+            color: #80deea;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .sommaire-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #26c6da;
+            color: #012;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .sommaire-button:hover {
+            background: #00bcd4;
+            transform: translateY(-2px);
+            color: #001;
+        }
+
+        /* Compétences */
+        .competences {
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .competences h2 {
+            text-align: center;
+            color: #80deea;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #26c6da;
+            padding-bottom: 20px;
+        }
+
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .competence {
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.8), rgba(38, 198, 218, 0.1));
+            padding: 30px;
+            border-left: 5px solid #26c6da;
+            border-radius: 5px;
+        }
+
+        .competence h3 {
+            color: #80deea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .competence p {
+            color: #b2dfdb;
+        }
+
+        .competence a { color: inherit; text-decoration: none; }
+        .competence a:hover { text-decoration: underline; }
+
+        /* Annexes */
+        .annexes {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Projets */
+        .projets {
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .projets h2 {
+            text-align: center;
+            color: #80deea;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #26c6da;
+            padding-bottom: 20px;
+        }
+
+        .projet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projet-card {
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.8), rgba(38, 198, 218, 0.1));
+            border: 2px solid #26c6da;
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .projet-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.9), rgba(38, 198, 218, 0.2));
+            box-shadow: 0 10px 30px rgba(38, 198, 218, 0.3);
+        }
+
+        .projet-card h3 {
+            color: #80deea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .projet-card .date {
+            color: #26c6da;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .projet-card p {
+            color: #b2dfdb;
+            margin-bottom: 15px;
+        }
+
+        .projet-card .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .projet-card .tech-tag {
+            background: rgba(38, 198, 218, 0.2);
+            border: 1px solid #26c6da;
+            color: #80deea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        /* Activités */
+        .activites {
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.12);
+        }
+
+        .activites h2 {
+            text-align: center;
+            color: #80deea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #26c6da;
+            padding-bottom: 20px;
+        }
+
+        .activite-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .activite-card {
+            background: linear-gradient(135deg, rgba(44, 83, 100, 0.8), rgba(38, 198, 218, 0.06));
+            border: 2px solid #26c6da;
+            padding: 20px;
+            border-radius: 8px;
+            color: #b2dfdb;
+        }
+
+        .annexes h2 {
+            color: #80deea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #26c6da;
+            padding-bottom: 20px;
+        }
+
+        .presentations h2 {
+            text-align: center;
+            color: #80deea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #26c6da;
+            padding-bottom: 20px;
+        }
+
+        .annexe-list {
+            background: rgba(38, 198, 218, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+            border-left: 5px solid #26c6da;
+        }
+
+        .annexe-list li {
+            list-style: none;
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .annexe-list li:before {
+            content: "▸";
+            color: #26c6da;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #80deea;
+            border-top: 2px solid #26c6da;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Introduction -->
+    <header>
+        <h1>Mon Portfolio</h1>
+        <p>Passionné par l'informatique et les nouvelles technologies</p>
+    </header>
+
+    <!-- Sommaire -->
+    <section class="sommaire">
+        <div class="sommaire-item">
+            <h3>🏢 Présentations de l'entreprise</h3>
+            <p>Présentation de l'organisme, missions et services.</p>
+            <a class="sommaire-button" href="#presentations" aria-label="Aller aux présentations">Accéder</a>
+        </div>
+        <div class="sommaire-item">
+            <h3>📚 Compétences</h3>
+            <p>Découvrez les compétences que j'ai apprises et maîtrisées durant mon BTS.</p>
+            <a class="sommaire-button" href="#competences" aria-label="Aller aux compétences">Accéder</a>
+        </div>
+        <div class="sommaire-item">
+            <h3>🚀 Mes Projets</h3>
+            <p>Présentation du projet réalisé en entreprise</p>
+            <a class="sommaire-button" href="#projets" aria-label="Aller aux projets">Accéder</a>
+        </div>
+        <div class="sommaire-item">
+            <h3>📝 Mes Activités</h3>
+            <p>Consultez et ajoutez mes activités et réalisations professionnelles.</p>
+            <a class="sommaire-button" href="#activites" aria-label="Aller aux activités">Accéder</a>
+        </div>
+        <div class="sommaire-item">
+            <h3>🗎 Annexes</h3>
+            <p>Documentation et argumentations des compétences présentées.</p>
+            <a class="sommaire-button" href="#annexes" aria-label="Aller aux annexes">Accéder</a>
+        </div>
+    </section>
+
+    <!-- Présentations de l'entreprise -->
+    <section id="presentations" class="presentations" style="padding:60px 40px;">
+        <h2>Présentations de l'entreprise</h2>
+        <div style="max-width:1200px;margin:0 auto;background:rgba(0,0,0,0.14);padding:20px;border-radius:6px;border-left:5px solid #26c6da;">
+            <p>Cette section présente l'entreprise, ses missions, son organisation et les services fournis aux usagers. Vous pouvez y ajouter des éléments (texte, images, liens internes ou externes).</p>
+            <p style="margin-top:10px;"><a href="presentations.html" style="color:#80deea;text-decoration:underline;">En savoir plus</a></p>
+        </div>
+    </section>
+    
+<!-- Activités -->
+    <section id="activites" class="activites">
+        <h2>Mes Activités</h2>
+        <div class="activite-list">
+            <div class="activite-card">
+                <h3><a href="activites.html" style="color:inherit;text-decoration:none;">Activité exemple</a></h3>
+                <p>Toutes les activités réalisées en entreprise.</p>
+                <p style="margin-top:10px;"><a class="sommaire-button" href="activites.html" aria-label="Voir l'activité">Voir</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="competences">
+        <h2>Mes Compétences</h2>
+        <div class="competence-grid">
+            <div class="competence">
+                <h3><a href="competence-patrimoine.html">Gérer le patrimoine informatique</a></h3>
+                <p>Gestion des postes Presto, inventaire, gestion de continuité, réparation, cycle de vie</p>
+            </div>
+            <div class="competence">
+                <h3><a href="competence-incidents.html">Répondre aux incidents et aux demandes d’assistance et d’évolution</a></h3>
+                <p>Gestion des tickets aide.paon</p>
+            </div>
+            <div class="competence">
+                <h3><a href="competence-presence-en-ligne.html">Développer la présence en ligne de l’organisation</a></h3>
+                <p>Réactualiser les pages du site internet "Connectez-vous"</p>
+            </div>
+            <div class="competence">
+                <h3><a href="competence-mode-projet.html">Travailler en mode projet</a></h3>
+                <p>Les classes mobiles du SCD</p>
+            </div>
+            <div class="competence">
+                <h3><a href="competence-service-utilisateurs.html">Mettre à disposition des utilisateurs un service informatique</a></h3>
+                <p>Les classes mobiles du SCD</p>
+            </div>
+            <div class="competence">
+                <h3><a href="competence-developpement-professionnel.html">Organiser son développement professionnel</a></h3>
+                <p>Aide à la création de gabarit sur GLPI, veille technologique sur la configuration des classes mobiles du SCD.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="projets">
+        <h2>Mes Projets</h2>
+        <div class="projet-grid">
+            <div class="projet-card">
+                    <h3><a href="classes-mobiles.html" style="color:inherit; text-decoration:none;">Classes Mobiles du SCD</a></h3>
+                <div class="date">2025 - 2026</div>
+                <p>Configuration et déploiement des classes mobiles pour le Service Commun de Documentation. Mise à jour des systèmes d'exploitation et des logiciels.</p>
+                <div class="technologies">
+                    <span class="tech-tag">Windows</span>
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">Configuration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annexes -->
+    <section id="annexes" class="annexes">
+        <h2>Annexes</h2>
+        <ul class="annexe-list">
+            <li><a href="annexe-mdt.html" style="color:inherit; text-decoration:none;"><strong>MDT</strong></a></li>
+            <li><a href="annexe-logiciels.html" style="color:inherit; text-decoration:none;"><strong>Logiciels utilisés</strong></a></li>
+            <li><a href="annexe-autres.html" style="color:inherit; text-decoration:none;"><strong>Autres ressources</strong></a></li>
+            <li><a href="annexe-logigramme.html" style="color:inherit; text-decoration:none;"><strong>Logigramme GLPI</strong></a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy;2024 - 2026 Mon Portfolio BTS SIO SISR</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mes activités</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%); color:#e0f2f1; margin:0; padding:40px; }
+        header { text-align:center; margin-bottom:30px; }
+        header h1 { color:#80deea; }
+        .container { max-width:1100px; margin:0 auto; background:rgba(0,0,0,0.14); padding:24px; border-radius:8px; border-left:5px solid #26c6da; }
+        .activities-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+        .activity { background:linear-gradient(135deg,rgba(44,83,100,0.8),rgba(38,198,218,0.06)); padding:18px; border-radius:8px; border:1px solid rgba(38,198,218,0.08); }
+        .activity h3 { color:#80deea; margin:0 0 8px 0; }
+        .activity p { color:#b2dfdb; margin:0 0 12px 0; }
+        .activity .meta { font-size:0.9em; color:#26c6da; margin-bottom:8px; }
+        .back { display:inline-block; margin-top:18px; padding:8px 14px; background:#26c6da; color:#012; border-radius:6px; text-decoration:none; font-weight:600; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mes Activités</h1>
+    </header>
+
+    <main class="container">
+        <h2 style="text-align:center;color:#80deea;margin-bottom:18px;">Activités réaliser en entreprise</h2>
+
+        <div class="activities-grid">
+            <article class="activity">
+                <h3>Déploiement de PCs</h3>
+                <div class="meta">Mise en service</div>
+                <p>Configuration, déploiement des postes Presto </p>
+            </article>
+
+            <article class="activity">
+                <h3>Support utilisateurs</h3>
+                <div class="meta">Assistance</div>
+                <p>Aide a régler les problèmes que les étudiants peuvent avoir sur leur PCs.</p>
+            </article>
+
+            <article class="activity">
+                <h3>support en ligne</h3>
+                <div class="meta">Présence en ligne</div>
+                <p>Traitement des tickets d'incidents, rédaction de procédures de résolution.</p>
+            </article>
+
+            <article class="activity">
+                <h3>Veille et documentation</h3>
+                <div class="meta">Documentation</div>
+                <p>Veille informatique sur les logiciels et systèmes utilisés en entreprise.</p>
+            </article>
+
+            <article class="activity">
+                <h3>Service après le prêt à l'étudiant</h3>
+                <div class="meta">Diagnostic</div>
+                <p>Faire un diagnostic et un nettoyage physique du pc à son retour</p>
+            </article>
+        </div>
+
+        <a class="back" href="index.html">Retour au sommaire</a>
+    </main>
+
+    <footer style="text-align:center;margin-top:28px;color:#80deea;">&copy;2024 - 2026 Mon Portfolio BTS SIO SISR</footer>
+</body>
+</html>
