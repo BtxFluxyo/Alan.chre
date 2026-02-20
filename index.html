@@ -274,6 +274,30 @@
             left: 0;
         }
 
+        /* Images latérales (gauche / droite) */
+
+        .side-image {
+            position: fixed;
+            top: 12px;
+            transform: none;
+            width: 160px;
+            height: 160px;
+            max-width: 22vw;
+            max-height: 22vw;
+            object-fit: contain;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.95;
+            filter: drop-shadow(0 6px 16px rgba(0,0,0,0.5));
+        }
+
+        .side-left { left: 8px; width: 220px; height: 220px; }
+        .side-right { right: 8px; }
+
+        @media (max-width: 800px) {
+            .side-image { display: none; }
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -284,10 +308,13 @@
     </style>
 </head>
 <body>
+    <!-- Images latérales (placer vos fichiers WebP dans images/left.webp et images/right.webp) -->
+    <!--<img class="side-image side-left" src="logo_aftec.webp" alt="Décor gauche" aria-hidden="true">
+    <!--<img class="side-image side-right" src="logo_univ.webp" alt="Décor droit" aria-hidden="true">
     <!-- Introduction -->
     <header>
         <h1>Mon Portfolio</h1>
-        <p>Passionné par l'informatique et les nouvelles technologies</p>
+        <p>Passionné par l'informatique et les nouvelle(s technologies</p>
     </header>
 
     <!-- Sommaire -->
@@ -402,6 +429,45 @@
     <footer>
         <p>&copy;2024 - 2026 Mon Portfolio BTS SIO SISR</p>
     </footer>
+
+    <script>
+        // au chargement de la page, acceche à la section sauvegardée
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedSection = sessionStorage.getItem('lastSection');
+            if (savedSection) {
+                const element = document.getElementById(savedSection);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    sessionStorage.removeItem('lastSection');
+                }
+            }
+        });
+
+        // Quand on clique sur un lien vers une autre page, sauvegarder la section active
+        document.querySelectorAll('a[href$=".html"]:not([href="index.html"])').forEach(link => {
+            link.addEventListener('click', function() {
+                // Trouver la section la plus proche du haut de la page
+                const sections = document.querySelectorAll('section[id]');
+                let closestSection = null;
+                let closestDistance = Infinity;
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestSection = section.id;
+                    }
+                });
+                
+                if (closestSection) {
+                    sessionStorage.setItem('lastSection', closestSection);
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
